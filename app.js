@@ -12,10 +12,10 @@ Game.init = function () {
 Game.loadBasePhoto = function () {
   return new Promise(function(resolve, reject) {
     var photoSources = [
-      '/img/trump-baseball.png',
-      '/img/bad-hair-flappy.png',
-      '/img/double-chin-microphone.png',
-      '/img/smarm-central.png'
+      './img/trump-baseball.png',
+      './img/bad-hair-flappy.png',
+      './img/double-chin-microphone.png',
+      './img/smarm-central.png'
     ];
 
     var image = new Image();
