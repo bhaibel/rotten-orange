@@ -44,6 +44,7 @@ Game.repaint = function () {
   Game.splatters.forEach(function(splatter) {
     splatter.splats.forEach(function(splat) {
       ctx.beginPath();
+      ctx.fillStyle = splat.color;
       ctx.arc(splat.cx, 600 - splat.cy, splat.r, 0, 2 * Math.PI, false);
       ctx.fill();
       ctx.closePath();
