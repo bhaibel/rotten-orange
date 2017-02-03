@@ -69,7 +69,7 @@ Game.blur = function() {
 function Splatter (center) {
   this.cx = center.x;
   this.cy = center.y;
-  this.r = 10;
+  this.r = randomIntBetween(9, 18);
   this.color = "rgb(" + [randomIntBetween(130, 245),randomIntBetween(70, 90),0].join(',') + ")";
   this.splats = constructSplatsFor(this);
   this.count = randomIntBetween(35, 60);
@@ -115,11 +115,30 @@ function randomIntBetween (min, max) {
   return min + (Math.random() * range | 0);
 }
 
+function getPosition (el) {
+  var xPosition = 0;
+  var yPosition = 0;
+
+  xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft)
+  yPosition += (el.offsetTop - el.scrollTop + el.clientTop)
+
+  return {
+    x: xPosition,
+    y: yPosition
+  }
+}
+
 $(document).ready(function() {
   Game.init();
   window.onblur = Game.blur;
-  Game.canvas.onclick = function() {
-    Game.addSplatter({x: 40, y: 40});
+  Game.canvas.onclick = function(event) {
+    var canvasPosition = getPosition(event.target.parentElement)
+
+    Game.addSplatter({
+      x: Math.floor(event.clientX - canvasPosition.x),
+      y: Math.floor(600 - (event.clientY - canvasPosition.y))
+    });
+
     if (!Game.focused) {
       Game.focus();
     }

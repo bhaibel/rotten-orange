@@ -1,0 +1,9 @@
+.click-catcher {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  margin-left: -300px;
+  z-index: 2;
+  width: 600;
+  height: 600;
+}
