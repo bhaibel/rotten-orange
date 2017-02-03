@@ -1,6 +1,14 @@
+h1 {
+  font-family: 'Frijole', Helvetica, sans-serif;
+  font-size: 4rem;
+  margin: -.75rem auto;
+  text-align: center;
+  color: rgb(144,64,0);
+}
+
 .click-catcher {
   position: fixed;
-  top: 30px;
+  top: 5rem;
   left: 50%;
   margin-left: -300px;
   z-index: 2;
