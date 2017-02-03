@@ -1,0 +1,16 @@
+{
+  "name": "rotten-orange",
+  "version": "1.0.0",
+  "description": "a fun game",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "author": "Betsy Haibel",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
