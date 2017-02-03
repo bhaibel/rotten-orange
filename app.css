@@ -15,3 +15,15 @@ h1 {
   width: 600;
   height: 600;
 }
+
+.instructions {
+  font-family: Helvetica, sans-serif;
+  position: fixed;
+  top: 7rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic; 
+  left: 50%;
+  margin-left: 320px;
+  color: rgb(104,34,0);
+}

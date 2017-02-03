@@ -26,7 +26,16 @@ Game.loadBasePhoto = function () {
 };
 Game.setBackground = function (newBackground) {
   Game.background = newBackground;
-  Game.repaint();
+
+  Game.addSplatter({
+    x: Math.floor(randomIntBetween(200, 400)),
+    y: Math.floor(randomIntBetween(200, 400))
+  });
+
+  if (!Game.focused) {
+    Game.focus();
+  }
+
   return Promise.resolve();
 };
 Game.addSplatter = function(center) {
@@ -130,6 +139,7 @@ function getPosition (el) {
 
 $(document).ready(function() {
   Game.init();
+
   window.onblur = Game.blur;
   Game.canvas.onclick = function(event) {
     var canvasPosition = getPosition(event.target.parentElement)
